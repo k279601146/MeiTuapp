@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <com.bilibili.magicasakura.widgets.TintAppBarLayout
+        android:id="@+id/channel_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/theme_color_primary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <com.bilibili.magicasakura.widgets.TintToolbar
+        android:id="@+id/channel_toolbar"
+        style="@style/Widget.App.Toolbar"
+        app:layout_scrollFlags="scroll"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:popupTheme="@style/AppToolbarPopupTheme"
+        android:background="@color/theme_color_primary"
+        app:elevation="4dp">
+    </com.bilibili.magicasakura.widgets.TintToolbar>
+    </com.bilibili.magicasakura.widgets.TintAppBarLayout>
+        <LinearLayout
+            android:id="@+id/subscribe_main_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/channel_appbar"
+            android:paddingBottom="14.0dip">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="14.0dip"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/my_category_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="添加分类"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/my_category_tip_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10.0dip"
+                    android:text="单击增删频道，长按拖拽排序，点击返回键取消，点击完成执行"
+                    android:textSize="11.0sp" />
+            </LinearLayout>
+
+            <com.bilibili.magicasakura.widgets.TintView
+                android:id="@+id/seperate_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/theme_color_primary" />
+
+            <com.nyw.meitu.view.DragGrid
+                android:id="@+id/userGridView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dip"
+                android:layout_marginRight="14dip"
+                android:gravity="center"
+                android:horizontalSpacing="14dip"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="4"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="14.0px" />
+
+           <com.bilibili.magicasakura.widgets.TintView
+                android:id="@+id/seperate_line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/theme_color_primary" />
+
+            <TextView
+                android:id="@+id/more_category_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:textSize="14sp" />
+
+            <com.nyw.meitu.view.OtherGridView
+                android:id="@+id/otherGridView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="14dip"
+                android:layout_marginRight="14dip"
+                android:gravity="center"
+                android:horizontalSpacing="14dip"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="4"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="14.0px" />
+
+            <com.bilibili.magicasakura.widgets.TintButton
+                android:id="@+id/channel_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="完成"
+                android:background="@color/theme_color_primary"
+                android:layout_marginTop="10dp">
+            </com.bilibili.magicasakura.widgets.TintButton>
+        </LinearLayout>
+    <include
+        android:id="@+id/category_layout"
+        layout="@layout/channel_item"
+        android:visibility="gone" />
+
+</RelativeLayout>

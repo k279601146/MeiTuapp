@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_share"
+        android:icon="@drawable/ic_share"
+        android:title="软件分享"/>
+    <item android:id="@+id/action_gengxin"
+        android:icon="@drawable/ic_vertical"
+        android:title="检查更新" />
+    <item android:id="@+id/action_fankui"
+        android:icon="@drawable/ic_send"
+        android:title="意见反馈"/>
+    <item android:id="@+id/action_lianxi"
+        android:icon="@drawable/ic_markunread"
+        android:title="联系我们"/>
+</menu>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <group android:id="@+id/group1">
+    <item
+        android:id="@+id/item_one"
+        android:checkable="true"
+        android:icon="@drawable/ic_home"
+        android:title="主页"/>
+
+    <item
+      android:id="@+id/item_two"
+      android:checkable="true"
+      android:icon="@drawable/ic_search"
+      android:title="我收藏的"/>
+
+    <item
+      android:id="@+id/item_three"
+      android:checkable="true"
+      android:icon="@drawable/ic_photo"
+      android:title="壁纸设置"/>
+
+    <item
+        android:id="@+id/item_four"
+        android:checkable="true"
+        android:icon="@drawable/ic_settings"
+        android:title="系统设置"/>
+
+  </group>
+
+  <group android:id="@+id/group2">
+
+    <item
+      android:id="@+id/item_five"
+      android:checkable="true"
+      android:icon="@drawable/ic_color"
+      android:title="主题样式"/>
+
+    <!--<item
+      android:id="@+id/item_six"
+      android:checkable="true"
+      android:icon="@drawable/ic_message"
+      android:title="联系作者"/>-->
+    <item
+        android:id="@+id/item_seven"
+        android:checkable="true"
+        android:icon="@drawable/ic_announcement"
+        android:title="关于"/>
+    <item
+        android:id="@+id/item_eight"
+        android:checkable="true"
+        android:icon="@drawable/ic_exit"
+        android:title="退出"/>
+
+  </group>
+
+</menu>

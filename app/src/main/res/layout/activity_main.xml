@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.CoordinatorLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.bilibili.magicasakura.widgets.TintAppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/theme_color_primary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            <com.bilibili.magicasakura.widgets.TintToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.App.Toolbar"
+                app:layout_scrollFlags="scroll"
+                android:fitsSystemWindows="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:popupTheme="@style/AppToolbarPopupTheme"
+                android:background="@color/theme_color_primary"
+                app:elevation="4dp">
+            </com.bilibili.magicasakura.widgets.TintToolbar>
+            <com.bilibili.magicasakura.widgets.TintLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:id="@+id/tabLayout"
+                android:background="@color/theme_color_primary"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:id="@+id/rl_column"
+                    android:layout_width="match_parent"
+                    android:layout_height="40.0dip"
+                    android:layout_weight="1.0">
+
+                    <com.nyw.meitu.view.ColumnHorizontalScrollView
+                        android:id="@+id/mColumnHorizontalScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="40.0dip"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:id="@+id/mRadioGroup_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp" />
+                    </com.nyw.meitu.view.ColumnHorizontalScrollView>
+                  <com.bilibili.magicasakura.widgets.TintImageView
+                        android:id="@+id/shade_left"
+                        android:layout_width="10.0dip"
+                        android:layout_height="40.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:background="@color/theme_color_primary"
+                        android:visibility="gone" />
+
+                    <com.bilibili.magicasakura.widgets.TintImageView
+                        android:id="@+id/shade_right"
+                        android:layout_width="1.0dip"
+                        android:layout_height="40.0dip"
+                        android:background="@color/theme_color_primary"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_more_columns"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40.0dip">
+                    <ImageView
+                        android:id="@+id/button_more_columns"
+                        android:layout_width="35dip"
+                        android:layout_height="35dip"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_add" />
+                </LinearLayout>
+            </com.bilibili.magicasakura.widgets.TintLinearLayout>
+
+        </com.bilibili.magicasakura.widgets.TintAppBarLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginRight="@dimen/fab_margin_right"
+                android:layout_marginBottom="@dimen/fab_margin_bottom"
+                android:src="@drawable/ic_top"
+                app:layout_anchor="@+id/viewPager"
+                app:layout_anchorGravity="right|bottom|end"
+                app:fabSize="normal" />
+        </android.support.design.widget.CoordinatorLayout>
+    </LinearLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer" />
+</android.support.v4.widget.DrawerLayout>

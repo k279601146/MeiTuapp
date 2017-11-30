@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <com.bilibili.magicasakura.widgets.TintAppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        style="@style/Widget.App.Toolbar"
+        app:layout_collapseMode="pin"
+        android:fitsSystemWindows="true"
+        android:background="@color/theme_color_primary">
+        <com.bilibili.magicasakura.widgets.TintToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_collapseMode="pin"
+            style="@style/Widget.App.Toolbar"
+            android:fitsSystemWindows="true"
+            android:background="@color/theme_color_primary" />
+    </com.bilibili.magicasakura.widgets.TintAppBarLayout>
+       <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_error="@layout/layout_loaded">
+    </com.jude.easyrecyclerview.EasyRecyclerView>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.AboutActivity"
+    tools:showIn="@layout/activity_about">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_500"
+            android:layout_margin="20dp" />
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:text="@string/app_name"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <com.bilibili.magicasakura.widgets.TintTextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/app_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="50dp"
+            android:lineSpacingExtra="5dp"
+            android:textColor="@color/theme_color_primary"
+            android:textSize="16sp"
+            android:text="@string/about_content" />
+        <com.bilibili.magicasakura.widgets.TintTextView
+            android:id="@+id/me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/theme_color_primary"
+            android:layout_centerHorizontal="true"
+            android:text="作者：聂玉文" />
+        <com.bilibili.magicasakura.widgets.TintTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:text="版  本：V  1.0"
+            android:textColor="@color/theme_color_primary"
+            android:layout_below="@+id/me" />
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>
