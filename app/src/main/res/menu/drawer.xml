@@ -11,7 +11,7 @@
     <item
       android:id="@+id/item_two"
       android:checkable="true"
-      android:icon="@drawable/ic_search"
+      android:icon="@drawable/ic_favorite"
       android:title="我收藏的"/>
 
     <item

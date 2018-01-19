@@ -5,7 +5,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +19,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.king.base.util.SharedPreferencesUtils;
+import com.nyw.meitu.Constants;
 import com.nyw.meitu.R;
-import com.nyw.meitu.dao.DetailLovesDao;
-import com.nyw.meitu.dao.Love;
 import com.nyw.meitu.model.GirlResult;
+import com.nyw.meitu.tool.SharedPreferences;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -30,7 +32,10 @@ import com.umeng.socialize.media.UMImage;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -40,10 +45,9 @@ import java.util.List;
 public class GirlDetailAdapter extends BasePagerAdapter<GirlResult.Girl> {
 
     private static final int REQUEST_CODE_SAVE_IMG = 10;
-
     private LayoutInflater layoutInflater;
     private PhotoView photoView;
-    private DetailLovesDao dao;
+    private List<GirlResult.Girl> list=new ArrayList();
     public GirlDetailAdapter(Context context, List<GirlResult.Girl> listData) {
         super(context,listData);
         this.layoutInflater = LayoutInflater.from(context);
@@ -64,11 +68,18 @@ public class GirlDetailAdapter extends BasePagerAdapter<GirlResult.Girl> {
                     public void onItemClick(Object o, int position) {
                         switch (position){
                             case 0:
-                                //dao.insertDetailLovesDao(girl.getUrl(),girl.get_id());
-                                Toast.makeText(context,"收藏成功", Toast.LENGTH_LONG).show();
+                                Snackbar.make(photoView,"正在开发中", Snackbar.LENGTH_SHORT).show();
+                               /* Glide.with(context).load(girl.getUrl()).asBitmap().into(new SimpleTarget<Bitmap>() {
+                                    @Override
+                                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+                                        Log.e("收藏", String.valueOf(resource));
+                                        SharedPreferencesUtils.put(context, Constants.FIRST_GIRL_URL2, String.valueOf(resource));
+                                    }
+                                });*/
+
                                 break;
                             case 1:
-                                final String dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/meitu/";
+                                final String dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/MeiTu/";
                                 Glide.with(context).load(girl.getUrl()).asBitmap().into(new SimpleTarget<Bitmap>() {
                                     @Override
                                     public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {

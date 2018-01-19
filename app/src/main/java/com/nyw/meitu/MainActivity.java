@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -156,7 +157,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
                             break;
                         case R.id.item_two:
-                            startActivity(new Intent(MainActivity.this, MyLoveActivity.class));
+                            Snackbar.make(navigationView,"正在开发中", Snackbar.LENGTH_SHORT).show();
+                            //startActivity(new Intent(MainActivity.this, MyLoveActivity.class));
                             break;
                         case R.id.item_three:
                             Intent intent = new Intent(Intent.ACTION_SET_WALLPAPER);
@@ -417,7 +419,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.action_share:
                 //Toast.makeText(this,"你好",Toast.LENGTH_SHORT).show();
                 UMImage thumb =  new UMImage(this, R.drawable.default_picture);
-                UMWeb web = new UMWeb("http://dev.umeng.com/social");
+                UMWeb web = new UMWeb("https://www.pgyer.com/nywapp");
                 web.setTitle("美图");//标题
                 web.setThumb(thumb);  //缩略图
                 web.setDescription("美图(美女图片)，可以保存高清壁纸，可以分享精美图片"+ "给您的朋友!将精彩图片设置为手机壁纸，或者使用侧边导航中的“壁纸设置（本地）”" +
@@ -428,6 +430,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                                 SHARE_MEDIA.SMS,SHARE_MEDIA.EMAIL,SHARE_MEDIA.MORE)
                         .setCallback(shareListener)
                         .open();
+                break;
+            case R.id.action_gengxin:
+                Snackbar.make(mDrawerLayout ,"已经是最新版本哦", Snackbar.LENGTH_SHORT).show();
+                break;
+            case R.id.action_fankui:
+                Snackbar.make(mDrawerLayout,"邮箱992116519@qq.com", Snackbar.LENGTH_SHORT).show();
+                break;
+            case R.id.action_lianxi:
+                Snackbar.make(mDrawerLayout,"邮箱992116519@qq.com", Snackbar.LENGTH_SHORT).show();
                 break;
             default:
         }

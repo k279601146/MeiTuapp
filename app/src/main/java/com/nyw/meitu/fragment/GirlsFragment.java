@@ -221,7 +221,7 @@ public class GirlsFragment extends BaseFragment implements MainActivity.OnScroll
                             if(page<=1){
                                 esayGirlAdapter.clear();
                                 if(list!=null && list.size()>0){
-                                    SharedPreferencesUtils.put(context,"first_girl_url",list.get(0).getUrl());
+                                    SharedPreferencesUtils.put(context,Constants.FIRST_GIRL_URL,list.get(0).getUrl());
                                 }
                             }
                             esayGirlAdapter.addAll(girlResult.getResults());

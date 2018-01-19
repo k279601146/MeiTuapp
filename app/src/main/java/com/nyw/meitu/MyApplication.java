@@ -27,6 +27,9 @@ import com.nyw.meitu.util.ThemeHelper;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MyApplication extends Application implements ThemeUtils.switchColor {
     private static MyApplication mAppApplication;

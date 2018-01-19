@@ -20,11 +20,11 @@
             android:fitsSystemWindows="true"
             android:background="@color/theme_color_primary" />
     </com.bilibili.magicasakura.widgets.TintAppBarLayout>
-       <com.jude.easyrecyclerview.EasyRecyclerView
-        android:id="@+id/recyclerView"
+    <ImageView
+        android:id="@+id/iv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_error="@layout/layout_loaded">
-    </com.jude.easyrecyclerview.EasyRecyclerView>
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_welcome" />
 
 </android.support.design.widget.CoordinatorLayout>
